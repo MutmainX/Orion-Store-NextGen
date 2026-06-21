@@ -147,7 +147,7 @@ const CompactAppCard: React.FC<CompactAppCardProps> = ({
                         }}
                         className={`w-6 h-6 rounded-full flex items-center justify-center transition-all active:scale-90 ${isFavorite ? 'text-rose-500 bg-rose-500/10' : 'text-theme-sub hover:text-rose-500 hover:bg-rose-500/10'}`}
                     >
-                        <i className={`${isFavorite ? 'fas' : 'far'} fa-heart text-[9px]`}></i>
+                        <span className="material-icons-round text-[14px]">{isFavorite ? 'favorite' : 'favorite_border'}</span>
                     </button>
 
                     <div className="px-2 py-0.5 rounded-full bg-primary/10 border border-primary/20 w-full overflow-hidden">
