@@ -706,3 +706,94 @@ body.perf-mode .orion-shadow-frame::before {
     0% { transform: translate(-50%, 0) rotate(0deg); }
     100% { transform: translate(-50%, 0) rotate(360deg); }
 }
+
+/* --- Safe Area Padding Top --- */
+.safe-area-pt {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* --- Smooth Scroll Behavior --- */
+.smooth-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* --- Material Icon Transitions --- */
+.material-icons-round {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
+}
+
+button:hover .material-icons-round {
+  transform: scale(1.1);
+}
+
+button:active .material-icons-round {
+  transform: scale(0.95);
+}
+
+/* --- Minimal Card Hover Effects --- */
+.app-card-optimized:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease;
+}
+
+/* --- Button Ripple Effect Base --- */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.ripple:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* --- Gradient Text --- */
+.gradient-text {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --- Soft Shadow Utilities --- */
+.shadow-soft {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-medium {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-elevated {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* --- Dark Mode Shadows --- */
+html.dark .shadow-soft,
+html.dusk .shadow-soft {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+html.dark .shadow-medium,
+html.dusk .shadow-medium {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+html.dark .shadow-elevated,
+html.dusk .shadow-elevated {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}

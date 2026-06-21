@@ -210,9 +210,9 @@ const CategoryCardButton: React.FC<{
             <div className="relative z-10 flex h-full flex-col justify-between">
                 <div className="flex items-start justify-between gap-3">
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/[0.08] bg-black/5 text-lg">
-                        <i className={`fas ${card.icon}`}></i>
+                        <span className="material-icons-round text-white">{card.icon || 'apps'}</span>
                     </div>
-                    <i className="fas fa-arrow-right text-sm text-white/70"></i>
+                    <span className="material-icons-round text-sm text-white/70">arrow_forward</span>
                 </div>
 
                 <div>
@@ -245,7 +245,7 @@ const BundleSignature: React.FC<{ bundle: NonNullable<StoreCollection['bundles']
         <div className="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-[1.35rem] border border-white/[0.08] bg-black/10 text-white">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.18),transparent_55%)]" />
             {usesFontAwesomeIcon ? (
-                <i className={`fas ${bundle.icon} relative z-10 text-lg`}></i>
+                <span className="material-icons-round relative z-10 text-lg">{bundle.icon}</span>
             ) : (
                 <span className="relative z-10 text-2xl font-black tracking-tight">
                     {(bundle.icon || mark).slice(0, 2).toUpperCase()}
@@ -325,7 +325,7 @@ const RecommendationBundlesModule: React.FC<{
                                             {effectiveCount} Apps Bundled
                                         </span>
                                         <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-black/10 text-white/90">
-                                            <i className="fas fa-arrow-right text-xs"></i>
+                                            <span className="material-icons-round text-xs">arrow_forward</span>
                                         </span>
                                     </div>
                                 </div>
@@ -344,7 +344,7 @@ const RecommendationBundlesModule: React.FC<{
                     className="relative flex h-[11.4rem] w-[14.85rem] shrink-0 snap-start flex-col items-center justify-center gap-3 rounded-[2rem] border-2 border-dashed border-theme-border bg-theme-card/40 px-4 text-center text-theme-text transition-colors hover:border-theme-accent/60 hover:bg-theme-card/60"
                 >
                     <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-theme-accent/10 text-theme-accent">
-                        <i className="fas fa-plus text-lg"></i>
+                        <span className="material-icons-round text-lg">add</span>
                     </span>
                     <span className="flex flex-col gap-1">
                         <span className="text-sm font-black tracking-tight">Create Your Bundle</span>
@@ -601,7 +601,7 @@ const SortedGridPreview: React.FC<{
                         className="mt-4 w-full py-3 rounded-2xl bg-theme-element text-theme-text font-bold text-sm transition-all hover:bg-theme-hover flex items-center justify-center gap-2"
                     >
                         <span>Show All {total} Apps</span>
-                        <i className="fas fa-arrow-down text-[10px]"></i>
+                        <span className="material-icons-round text-[10px]">expand_more</span>
                     </motion.button>
                 )}
             </div>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Tab } from '../types';
 
@@ -11,45 +10,45 @@ interface BottomNavProps {
 
 const BottomNav: React.FC<BottomNavProps> = ({ activeTab, onTabChange, hiddenTabs = [], glassEffect = true }) => {
   return (
-    <div className="fixed bottom-4 left-0 right-0 z-40 flex justify-center pointer-events-none safe-area-pb">
-       <nav className={`${glassEffect ? 'bg-surface/95 backdrop-blur-lg' : 'bg-surface'} border border-theme-border p-1.5 rounded-[2rem] shadow-2xl flex items-center gap-1 animate-slide-up pointer-events-auto transform translate-z-0`}>
+    <div className="fixed bottom-0 left-0 right-0 z-40 safe-area-pb">
+       <nav className={`${glassEffect ? 'bg-surface/95 backdrop-blur-xl' : 'bg-surface'} border-t border-theme-border/50 px-2 py-2 flex items-center justify-around`}>
          
          {!hiddenTabs.includes('android') && (
              <button 
                 onClick={() => onTabChange('android')}
-                className={`group px-4 py-2.5 rounded-[1.5rem] font-bold transition-all duration-200 flex items-center justify-center ${activeTab === 'android' ? 'bg-primary text-white shadow-lg shadow-primary/30 scale-105' : 'text-theme-sub hover:bg-theme-element'}`}
+                className={`flex flex-col items-center justify-center gap-1 px-4 py-2 rounded-2xl transition-all duration-200 ${activeTab === 'android' ? 'text-primary' : 'text-theme-sub hover:text-theme-text'}`}
              >
-                <i className="fab fa-android text-lg"></i>
-                {activeTab === 'android' && <span className="animate-fade-in text-sm ml-1.5">Apps</span>}
+                <span className="material-icons-round text-base">{activeTab === 'android' ? 'apps' : 'apps_outage'}</span>
+                <span className="text-[10px] font-medium">Apps</span>
              </button>
          )}
 
          {!hiddenTabs.includes('pc') && (
              <button 
                 onClick={() => onTabChange('pc')}
-                className={`group px-4 py-2.5 rounded-[1.5rem] font-bold transition-all duration-200 flex items-center justify-center ${activeTab === 'pc' ? 'bg-primary text-white shadow-lg shadow-primary/30 scale-105' : 'text-theme-sub hover:bg-theme-element'}`}
+                className={`flex flex-col items-center justify-center gap-1 px-4 py-2 rounded-2xl transition-all duration-200 ${activeTab === 'pc' ? 'text-primary' : 'text-theme-sub hover:text-theme-text'}`}
              >
-                <i className="fab fa-windows text-lg"></i>
-                {activeTab === 'pc' && <span className="animate-fade-in text-sm ml-1.5">PC</span>}
+                <span className="material-icons-round text-base">{activeTab === 'pc' ? 'desktop_windows' : 'computer'}</span>
+                <span className="text-[10px] font-medium">PC</span>
              </button>
          )}
 
          {!hiddenTabs.includes('tv') && (
              <button 
                 onClick={() => onTabChange('tv')}
-                className={`group px-4 py-2.5 rounded-[1.5rem] font-bold transition-all duration-200 flex items-center justify-center ${activeTab === 'tv' ? 'bg-primary text-white shadow-lg shadow-primary/30 scale-105' : 'text-theme-sub hover:bg-theme-element'}`}
+                className={`flex flex-col items-center justify-center gap-1 px-4 py-2 rounded-2xl transition-all duration-200 ${activeTab === 'tv' ? 'text-primary' : 'text-theme-sub hover:text-theme-text'}`}
              >
-                <i className="fas fa-tv text-lg"></i>
-                {activeTab === 'tv' && <span className="animate-fade-in text-sm ml-1.5">TV</span>}
+                <span className="material-icons-round text-base">{activeTab === 'tv' ? 'live_tv' : 'tv'}</span>
+                <span className="text-[10px] font-medium">TV</span>
              </button>
          )}
 
          <button 
             onClick={() => onTabChange('about')}
-            className={`px-4 py-2.5 rounded-[1.5rem] font-bold transition-all duration-200 flex items-center gap-2 ${activeTab === 'about' ? 'bg-primary text-white shadow-lg shadow-primary/30 scale-105' : 'text-theme-sub hover:bg-theme-element'}`}
+            className={`flex flex-col items-center justify-center gap-1 px-4 py-2 rounded-2xl transition-all duration-200 ${activeTab === 'about' ? 'text-primary' : 'text-theme-sub hover:text-theme-text'}`}
          >
-            <i className="fas fa-code text-lg"></i>
-            {activeTab === 'about' && <span className="animate-fade-in text-sm ml-1.5">Dev</span>}
+            <span className="material-icons-round text-base">{activeTab === 'about' ? 'code' : 'developer_mode'}</span>
+            <span className="text-[10px] font-medium">Dev</span>
          </button>
       </nav>
     </div>
